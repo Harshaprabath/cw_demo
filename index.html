@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Small Business - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Owl Carousel CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include Owl Carousel CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <style>
+        .owl-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .item {
+            margin-top: 10px;
+
+        }
+
+        .item img {
+            width: 100px;
+            height: auto;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+
+            height: fit-content;
+            width: fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Close button style */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            height: auto;
+        }
+
+        .image-zoom-container {
+            position: relative;
+        }
+
+        .image-zoom {
+
+
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-zoom-container:hover .image-zoom {
+            transform: scale(1.1);
+        }
+
+        @keyframes lights {
+            0% {
+                color: hsl(117, 39%, 80%);
+                text-shadow:
+                    0 0 1em hsla(58, 100%, 60%, 0.2),
+                    0 0 0.125em hsla(58, 100%, 60%, 0.3),
+                    -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+                    1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+            }
+
+            30% {
+                color: hsl(230, 80%, 90%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.5),
+                    -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+                    0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+            }
+
+            40% {
+                color: hsl(230, 100%, 95%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 90%, 0.5),
+                    -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+                    0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+            }
+
+            70% {
+                color: hsl(230, 80%, 90%);
+                text-shadow:
+                    0 0 1em hsla(320, 100%, 50%, 0.5),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.5),
+                    0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+                    -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+            }
+
+            100% {
+                color: hsl(230, 40%, 80%);
+                text-shadow:
+                    0 0 1em hsla(320, 20%, 94%, 0.926),
+                    0 0 0.125em hsla(320, 100%, 60%, 0.3),
+                    1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+                    -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+            }
+
+        }
+
+
+        h2 {
+            margin: auto;
+            font-size: 3.5rem;
+            font-weight: 600;
+            animation: lights 5s 750ms linear infinite;
+        }
+
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            /* Background color of the splash screen */
+            color: #fff;
+            /* Text color on the splash screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+
+            /* Ensure it's on top of everything */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="splash-screen">
+        <img src="./assets/splash.png">
+
+    </div>
+    <div style="height: 0vh;">
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7">
+                    <div class="image-zoom-container">
+                        <img class="img-fluid rounded mb-4 mb-lg-0 image-zoom" style="height: 65vh;" src="assets/0.png"
+                            alt="..." />
+                    </div>
+
+                    <!-- Content Row-->
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-lg-12">
+                            <div class="owl-carousel">
+                                <div class="item"><img src="assets/1.png" alt="Image 1"></div>
+                                <div class="item"><img src="assets/2.png" alt="Image 2"></div>
+                                <div class="item"><img src="assets/3.png" alt="Image 3"></div>
+                                <div class="item"><img src="assets/4.png" alt="Image 4"></div>
+                                <div class="item"><img src="assets/5.png" alt="Image 5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="assets/logo.png" style="width:140px;" alt="Image 3">
+                    <br>
+                    <br>
+                    <h2>Posture Pedic 9"</h2>
+                    <br>
+                    <p style="color: #fff;">Get the ultimate support you need with our 9-inch mattress. With just the
+                        right amount of
+                        cushioning and a firm support layer, this mattress helps maintain proper body alignment for a
+                        restful night’s sleep. Upgrade today and experience the perfect balance of comfort and support!
+                    </p>
+                    <br>
+                    <a class="btn btn-primary" href="#!">Back</a>
+                    <a class="btn btn-warning" id="openModalBtn">Locetion</a>
+
+
+                    <!-- Modal container and content -->
+                    <div class="overlay" id="overlay"></div>
+                    <div class="modal" id="modal">
+                        <span class="close-btn" id="closeModalBtn">&times;</span>
+                        <div class="col-lg-12"><img class="img-fluid rounded mb-4 mb-lg-0"
+                                style="height: 65vh; width:65vw" src="assets/map.png" alt="..." />
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <script>
+            setTimeout(function () {
+                // Hide the splash screen and show the main content
+                document.querySelector('.splash-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 3000); 
+            // Open the modal
+            $("#openModalBtn").click(function () {
+                $("#modal, #overlay").fadeIn();
+            });
+
+            // Close the modal
+            $("#closeModalBtn, #overlay").click(function () {
+                $("#modal, #overlay").fadeOut();
+            });
+            $(document).ready(function () {
+                $(".owl-carousel").owlCarousel({
+                    items: 5,
+                    loop: true,
+                    margin: 10,
+
+                    nav: true,
+                    dots: true,
+                    autoplay: true, // Add this line for autoplay
+                    autoplayTimeout: 4000,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 5
+                        }
+                    }
+
+                });
+                $('.owl-carousel .item img').on('click', function () {
+                    var newImageSrc = $(this).attr('src');
+                    $('.image-zoom').attr('src', newImageSrc);
+                });
+            });
+
+        </script>
+</body>
+
+</html>
