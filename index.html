@@ -179,6 +179,24 @@
 
             /* Ensure it's on top of everything */
         }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #000;
+            }
+        }
     </style>
 </head>
 
@@ -216,10 +234,7 @@
                     <br>
                     <h2>Posture Pedic 9"</h2>
                     <br>
-                    <p style="color: #fff;">Get the ultimate support you need with our 9-inch mattress. With just the
-                        right amount of
-                        cushioning and a firm support layer, this mattress helps maintain proper body alignment for a
-                        restful night’s sleep. Upgrade today and experience the perfect balance of comfort and support!
+                    <p style="color: #fff;" id="typing-text">!
                     </p>
                     <br>
                     <a class="btn btn-primary" href="#!">Back</a>
@@ -290,6 +305,31 @@
                 });
             });
 
+            
+
+        </script>
+          <script>
+           document.addEventListener('DOMContentLoaded', function () {
+            // Function to execute after a delay of 3 seconds
+            setTimeout(startTyping, 3010);
+
+            function startTyping() {
+                const textElement = document.getElementById('typing-text');
+                const text = "Get the ultimate support you need with our 9-inch mattress. With just the right amount of cushioning and a firm support layer, this mattress helps maintain proper body alignment for a restful night’s sleep. Upgrade today and experience the perfect balance of comfort and support!";
+
+                let index = 0;
+
+                function type() {
+                    textElement.textContent += text[index];
+                    index++;
+
+                    if (index < text.length) {
+                        setTimeout(type, 20);
+                    }
+                }
+
+                type();
+            } });
         </script>
 </body>
 
